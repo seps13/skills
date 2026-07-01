@@ -12,6 +12,6 @@ Call the Skill tool with "tdd" where possible, at pre-agreed seams.
 
 Run typechecking regularly, single test files regularly, and the full test suite once at the end.
 
-Once done, call the Skill tool with "code-review" to review the work.
+Once every PRD/issue item is implemented and typechecks and tests pass, call the Skill tool with "mattpocock-skills:code-review" on the diff before committing anything. Code review runs as isolated sub-agents that only report findings back to you.
 
-Commit your work to the current branch.
+After you've addressed the findings, commit your work to the current branch.
