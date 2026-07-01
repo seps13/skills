@@ -10,6 +10,6 @@ Use /tdd where possible, at pre-agreed seams.
 
 Run typechecking regularly, single test files regularly, and the full test suite once at the end.
 
-Once done, use /code-review to review the work.
+Once done, invoke /code-review on the diff before committing anything. Code review runs as isolated sub-agents that only report findings back to you — they must not commit, push, or re-invoke /implement or any review skill themselves.
 
-Commit your work to the current branch.
+After you've addressed the findings, commit your work to the current branch.
