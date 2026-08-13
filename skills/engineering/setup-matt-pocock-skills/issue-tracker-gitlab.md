@@ -12,7 +12,13 @@ Issues and specs for this repo live as GitLab issues. Use the [`glab`](https://g
 - **Close**: `glab issue close <number>`. `glab issue close` does not accept a closing comment, so post the explanation first with `glab issue note <number> --message "..."`, then close.
 - **Merge requests**: GitLab calls PRs "merge requests". Use `glab mr create`, `glab mr view`, `glab mr note`, etc., the same shape as `gh pr ...` with `mr` in place of `pr` and `note`/`--message` in place of `comment`/`--body`.
 
-Infer the repo from `git remote -v`; `glab` does this automatically when run inside a clone.
+## Always target the repo explicitly
+
+`glab` infers the project from the shell's cwd, not the session's project — `cd`-ing into a sibling repo (e.g. to borrow its toolchain) silently retargets every later write to that repo, and since issue numbers collide across repos it lands on a real, unrelated issue instead of failing. GitLab CE keeps no description history, so an overwritten description is unrecoverable.
+
+- **Pass `-R <namespace/repo>` on every write** (`issue update/note/close`, `mr` equivalents, `api -X PUT/POST`).
+- **Never `cd` into another repo** — use the tool's own directory flag instead (`--directory`, `--prefix`, `git -C <path>`).
+- **Verify writes by re-reading** — `glab api <path> -X PUT -f description@-` silently no-ops (no error) instead of writing.
 
 ## Merge requests as a triage surface
 
