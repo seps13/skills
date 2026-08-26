@@ -1,0 +1,19 @@
+{
+  "name": "mattpocock-general",
+  "version": "1.0.0",
+  "description": "Subset of Matt Pocock's skills usable in any repo — general thinking/writing/git-safety tools, no coding-specific workflows.",
+  "author": {
+    "name": "Matt Pocock",
+    "url": "https://www.aihero.dev"
+  },
+  "homepage": "https://www.aihero.dev/s/skills-newsletter",
+  "repository": "https://github.com/mattpocock/skills",
+  "license": "MIT",
+  "keywords": [
+    "productivity",
+    "grilling",
+    "writing",
+    "research",
+    "git"
+  ]
+}
